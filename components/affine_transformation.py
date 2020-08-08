@@ -88,7 +88,6 @@ def apply_affine_transformation(delauney, hull_1, hull_2, img_1, img_2):
     if debug_affine_transformation:
         cv2.imshow("Affine transformation", img_2_with_face_1)
         cv2.waitKey(0)
-
         cv2.destroyAllWindows()
 
     return img_2_with_face_1

@@ -3,6 +3,7 @@
 Run all the separate components of face swapping in an easily understandable high-level runner class
 """
 
+import os
 import sys
 import getopt
 import cv2
@@ -66,11 +67,13 @@ def main(argv):
     swap_2 = merge_mask_with_image(hull_1, img_2_face_to_img_1, img_1)
 
     # show the results
-    cv2.imshow("Face Swap 1: ", swap_1)
-    cv2.imshow("Face Swap 2: ", swap_2)
-    cv2.waitKey(0)
+    # cv2.imshow("Face Swap 1: ", swap_1)
+    # cv2.imshow("Face Swap 2: ", swap_2)
+    # cv2.destroyAllWindows()
 
-    cv2.destroyAllWindows()
+    # save the results
+    cv2.imwrite(os.path.join('output', 'swap_1.jpg'), swap_1)
+    cv2.imwrite(os.path.join('output', 'swap_2.jpg'), swap_2)
 
 
 if __name__ == "__main__":
